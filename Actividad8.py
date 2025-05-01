@@ -80,3 +80,20 @@ def guardar_en_historial_txt(monto, moneda_origen, moneda_destino, resultado):
 
     print(f"\nMoneda de origen seleccionada: {moneda_origen}")
     print(f"Moneda de destino seleccionada: {moneda_destino}")
+
+    # Solicitar el monto a convertir
+    try:
+        monto = float(input(f"Ingrese el monto en {moneda_origen}: "))
+    except ValueError:
+        print("Error: El monto ingresado no es válido.")
+        return
+
+    # Realizar la conversión
+    resultado = convertir_monedas(monto, moneda_origen, moneda_destino, cotizaciones)
+
+    if resultado is not None:
+        print(f"\n{monto} {moneda_origen} equivalen a {resultado:.2f} {moneda_destino}")
+        guardar_en_historial_txt(monto, moneda_origen, moneda_destino, resultado)
+
+# Llamar a la función principal
+moneda_operaciones()
