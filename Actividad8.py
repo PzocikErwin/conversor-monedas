@@ -32,3 +32,51 @@ def guardar_en_historial_txt(monto, moneda_origen, moneda_destino, resultado):
         archivo.write(conversion)
 
     print("\nConversión guardada en el historial (historial.txt).")
+
+    def moneda_operaciones():
+    cotizaciones = cotizaciones_monedas()  # Obtener las cotizaciones
+
+    print("Seleccionar moneda de origen:")
+    print("1. USD")
+    print("2. EUR")
+    print("3. ARS")
+    print("4. BRL")
+
+    origen = input("Ingrese el número de la moneda de origen: ")
+
+    # asignamos directamente el valor a moneda_origen
+    if origen == "1":
+        moneda_origen = "USD"
+    elif origen == "2":
+        moneda_origen = "EUR"
+    elif origen == "3":
+        moneda_origen = "ARS"
+    elif origen == "4":
+        moneda_origen = "BRL"
+    else:
+        print("Moneda de origen no válida.")
+        return
+
+    print("\nSeleccionar moneda de destino:")
+    print("1. USD")
+    print("2. EUR")
+    print("3. ARS")
+    print("4. BRL")
+
+    destino = input("Ingrese el número de la moneda de destino: ")
+
+    # Asignar directamente el valor a moneda_destino
+    if destino == "1":
+        moneda_destino = "USD"
+    elif destino == "2":
+        moneda_destino = "EUR"
+    elif destino == "3":
+        moneda_destino = "ARS"
+    elif destino == "4":
+        moneda_destino = "BRL"
+    else:
+        print("Moneda de destino no válida.")
+        return
+
+    print(f"\nMoneda de origen seleccionada: {moneda_origen}")
+    print(f"Moneda de destino seleccionada: {moneda_destino}")
